@@ -115,7 +115,7 @@ Where α, β, and γ are equal weights (default: 1), but you can modify them in 
 
 **Anand Mahato**  
 From: Dhanbad  
-GitHub: [@yourusername](https://github.com/yourusername)
+GitHub: [@IamAnandMahato](https://github.com/IamAnandMahato)
 
 ---
 
