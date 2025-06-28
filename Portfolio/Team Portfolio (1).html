@@ -1,0 +1,361 @@
+<!DOCTYPE html> 
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Innovators Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-dark: #0f172a;
+      --text-light: #1f2937;
+      --text-dark: #f1f5f9;
+      --primary: #1E40AF;
+      --primary-hover: #2563EB;
+      --accent: #60A5FA;
+    }
+
+    [data-theme="light"] {
+      --bg: var(--bg-light);
+      --text: var(--text-light);
+    }
+
+    [data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      background: #1E3A8A;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #93c5fd;
+    }
+
+    #theme-toggle {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .member {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      width: 260px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    [data-theme="dark"] .member,
+    [data-theme="dark"] .slide-card {
+      background: #1e293b;
+    }
+
+    .member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(30, 64, 175, 0.2);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .card-slide {
+      display: flex;
+      flex-wrap: wrap; /* For desktop */
+      gap: 1.5rem;
+    }
+
+    .slide-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+      flex: 1 1 300px;
+    }
+
+    footer {
+      background: #1E3A8A;
+      color: #e5e7eb;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    @media (max-width: 768px) {
+      .team {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card-slide {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+
+      .slide-card {
+        min-width: 300px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav .links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav .links a {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body, h1, h2, p, a, button {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    ::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--accent);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header data-aos="zoom-in">
+    <h1>🚀 Team Presentation</h1>
+    <p>Cloud Computing Portfolio • 2025</p>
+  </header>
+
+  <nav>
+    <div class="links">
+      <a href="#team">Team</a>
+      <a href="#research">Research</a>
+      <a href="#solution">Solution</a>
+      <a href="#project">Project</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button id="theme-toggle">🌙 Dark Mode</button>
+  </nav>
+
+  <section id="team" data-aos="fade-up">
+    <h2>👨‍💻 Meet Our Team</h2>
+    <div class="team" id="team-container"></div>
+  </section>
+
+  <section id="research" data-aos="fade-up">
+    <h2>📄 Research Insights</h2>
+    <div class="card-slide">
+      <div class="slide-card" data-aos="fade-right">
+        <p><strong>Research Paper:</strong> “Power-aware Virtual Machine Placement in IaaS Cloud using Discrete Firefly Algorithm”</p>
+      </div>
+      <div class="slide-card" data-aos="fade-left">
+        <p><strong>Problem:</strong> High energy consumption due to inefficient VM placement strategies in cloud datacenters.</p>
+      </div>
+      <div class="slide-card" data-aos="fade-up">
+        <p><strong>Goal:</strong> To reduce energy usage and improve load balancing by applying a metaheuristic — the Discrete Firefly Algorithm (DFA).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="solution" data-aos="fade-up">
+    <h2>🔧 Solution Highlights</h2>
+    <div class="card-slide">
+      <div class="slide-card" data-aos="zoom-in-up">
+        <p>We implemented the Discrete Firefly Algorithm for intelligent VM placement to minimize power consumption.</p>
+      </div>
+      <div class="slide-card" data-aos="zoom-in-down">
+        <ul>
+          <li>⚡ Reduced energy usage by clustering low-load VMs</li>
+          <li>🧠 DFA-based placement outperforms traditional heuristics</li>
+          <li>📉 Improved SLA compliance and reduced server utilization peaks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="project" data-aos="fade-up">
+    <h2>🛠️ Project Execution</h2>
+    <div class="card-slide">
+      <div class="slide-card" data-aos="fade-right">
+        <p><strong>Project Title:</strong> Power-aware VM Placement using Discrete Firefly Algorithm (DFA)</p>
+        <p><strong>Objective:</strong> Optimize VM allocation to minimize energy consumption in IaaS cloud environments.</p>
+      </div>
+      <div class="slide-card" data-aos="fade-left">
+        <p><strong>Implementation:</strong> Simulated a datacenter using <strong>CloudSim</strong> and developed a custom DFA module for dynamic VM allocation.</p>
+        <ul>
+          <li>📦 Built using Java & CloudSim toolkit</li>
+          <li>⚙️ Integrated DFA-based decision logic for VM-to-host mapping</li>
+          <li>📊 Compared results with Best Fit, First Fit & Genetic Algorithm</li>
+        </ul>
+      </div>
+      <div class="slide-card" data-aos="fade-up">
+        <p><strong>Results:</strong> Achieved ~18–25% reduction in energy consumption and improved load balancing across cloud nodes.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/yourteam/vm-placement-dfa" target="_blank">View Code</a></p>
+        <p><strong>Report:</strong> <a href="https://yourproject.com/report.pdf" target="_blank">Download PDF</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h2>📬 Contact Us</h2>
+    <p>Email us: <a href="mailto:teaminnovators@college.edu">teaminnovators@college.edu</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Team Innovators — Cloud Computing Capstone
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const themeBtn = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+
+    function setTheme(mode) {
+      html.setAttribute("data-theme", mode);
+      themeBtn.textContent = mode === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+      localStorage.setItem("theme", mode);
+    }
+
+    themeBtn.addEventListener("click", () => {
+      const current = html.getAttribute("data-theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+
+    const storedTheme = localStorage.getItem("theme") || "light";
+    setTheme(storedTheme);
+
+    const teamMembers = [
+      { name: "Abhay Raj", role: "Cloud Integration Lead", img: "images/abhay.jpg" },
+      { name: "Pankaj Sahu", role: "AI & Monitoring Specialist", img: "images/pankaj.jpg" },
+      { name: "Rohan Pandey", role: "Backend Developer", img: "images/rohan.jpg" },
+      { name: "Anand Mahato", role: "UI/UX Designer", img: "images/anand.jpg" }
+    ];
+
+    const container = document.getElementById("team-container");
+    teamMembers.forEach(member => {
+      container.innerHTML += `
+        <div class="member" data-aos="zoom-in">
+          <img src="${member.img}" alt="${member.name}" />
+          <h3>${member.name}</h3>
+          <p>${member.role}</p>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
+</html>
